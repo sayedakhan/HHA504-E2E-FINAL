@@ -64,7 +64,7 @@
        - # sudo mysql
        Create database e2e
    
-### 6. Write a python script that connects to your SQL install and create a 'h1n1' table in the e2e database with data
+### 6. Write a python script that connects to your SQL install and create a 'h1n1' table in the e2e database with dataset H1N1 and Seasonal Flu Vaccines
 
 
     ## import pandas as pd 
@@ -85,6 +85,18 @@
 
     ## FluVaccine.to_sql(TABLENAME, con=engine)
 
+### 7. Create a dump (.sql) file
+    
+    ## Connect to remote server
+    - # ssh -i "sayeda_test_scratch.pem" ubuntu@ec2-3-144-198-23.us-east-2.compute.amazonaws.com
+    - # sudo mysqldump --databases e2e > backup.sql
+    
+### 8. Move dump (.sql) file from remote server to local machine
+   ## Open 2 terminals: 1 terminal for remote machine, 2nd for local machine
+   ## Enter the following command in terminal of local machine
+   - # scp skclient@ec2-3-144-198-23.us-east-2.compute.amazonaws.com:/home/ubuntu/backup.sql /Users/sayedakhan/Downloads
+   ## Confirm file in downloads folder > file name: backup.sql, size: 11.4 mb, pathname: /Users/sayedakhan/Downloads/backup.sql
+   ## Open file using visual studio code
 
 
 

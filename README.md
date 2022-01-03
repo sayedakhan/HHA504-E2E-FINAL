@@ -92,11 +92,12 @@
     - # sudo mysqldump --databases e2e > backup.sql
     
 ### 8. Move dump (.sql) file from remote server to local machine
-   ## Open 2 terminals: 1 terminal for remote machine, 2nd for local machine
-   ## Enter the following command in terminal of local machine
-   - # scp skclient@ec2-3-144-198-23.us-east-2.compute.amazonaws.com:/home/ubuntu/backup.sql /Users/sayedakhan/Downloads
-   ## Confirm file in downloads folder > file name: backup.sql, size: 11.4 mb, pathname: /Users/sayedakhan/Downloads/backup.sql
-   ## Open file using visual studio code
+
+    ## Open 2 terminals: 1 terminal for remote machine, 2nd for local machine
+    ## Enter the following command in terminal of local machine
+    - # scp skclient@ec2-3-144-198-23.us-east-2.compute.amazonaws.com:/home/ubuntu/backup.sql /Users/sayedakhan/Downloads
+    ## Confirm file in downloads folder > file name: backup.sql, size: 11.4 mb, pathname: /Users/sayedakhan/Downloads/backup.sql
+    ## Open file using visual studio code
 
 
 

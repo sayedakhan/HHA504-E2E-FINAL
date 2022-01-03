@@ -100,7 +100,34 @@
     ## Open file using visual studio code
 
 
+### 9. Create a trigger in e2e databash for 'h1n1' table
 
+    ## Connect to 
+    ## use e2e;
+    ## show tables;
+    ## select * from h1n1
+    
+    #### CREATE h1n1_concern_trigger ####
+
+        ##     delimiter $$
+        ##     CREATE TRIGGER h1n1_concern_trigger BEFORE INSERT ON e2e.h1n1
+        ##     FOR EACH ROW
+        ##     BEGIN
+	    ##         IF NEW.h1n1_concern > 3 THEN
+	    ##            SIGNAL SQLSTATE '45000'
+        ##            SET MESSAGE_TEXT = '"ERROR: H1N1 concern should be a numerical value between 0 and 3. Please try again."';
+        ##         END IF;
+        ##     END; $$
+        ##     delimiter ;
+
+    #### TEST h1n1_concern_trigger ####
+
+        ##     INSERT INTO e2e.h1n1
+        ##     (respondent_id, h1n1_concern) VALUES (26707, 7);
+
+    #### RESPONSE ####
+    
+    Error Code: 1644. "ERROR: H1N1 concern should be a numerical value between 0 and 3. Please try again."
 
 
 

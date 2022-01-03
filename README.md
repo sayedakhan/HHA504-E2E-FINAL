@@ -14,5 +14,5 @@
 
 **2. Create a user to the ubuntu EC2 instance**
 
-- Username: skclient
-- Password: ahi2021
+> Username: skclient
+> Password: ahi2021
